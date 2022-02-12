@@ -1,0 +1,204 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/BG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.70;
+    z-index: -1;
+
+}
+
+header {
+    background-color:rgb(30,30,30);
+}
+
+header h4 {
+    color: #fff;
+    margin-left: 1rem;
+    padding: 0.7rem;
+}
+
+#heroSection {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#heroSection img {
+    filter: drop-shadow(1px 1px 10px #000) drop-shadow(1px 1px 10px #000);
+}
+
+/*Configuración de caja formulario*/
+
+#busqueda {
+    position: relative;
+    max-width: 380px;
+    min-width: 280px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    color: #fff;
+    background-color: rgba(0,0,0,0.85);
+    padding: 25px;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+
+/*Tooltip para mensage error*/
+
+#campoId {
+    position: relative;
+}
+
+#msgeError {
+    visibility: hidden;
+    position: absolute;
+    width: 260px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 4px 6px;
+    background-color: rgba(204, 0, 0,0.8);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 300ms, top 300ms;
+}
+
+#msgeError::after {
+    content: "";
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    bottom: 100%;
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+/* Estilo de campo de escritura*/
+
+#heroId {
+    width:100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: lightBreath 1.8s cubic-bezier(0.2, 0, 0.8, 1) 0s infinite alternate;
+}
+
+#heroId:focus {
+    outline: none;
+    /*Para que una animacion inicie de nuevo, debe ser cambiada al realizar la acción que se desea,
+    esto quiere decir que no se puede usar la animacion "lightBreath" en la casilla de input en su
+    estado normal y en focus. Lo que se necesita es crear una nueva animación que se active al
+    hacer focus, es por eso que se creó una segunda animacion, que es solo tiene un nombre distinto
+    y que es exactamente igual a la otra.*/
+    animation: lightBreathFocus 1.8s cubic-bezier(0.2, 0, 0.8, 1) 0s 1 normal;
+    animation-fill-mode: forwards;
+}
+
+/*Estilo Botón*/
+
+#btn-buscar {
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 3px 15px;
+    font-weight: bolder;
+    border-radius: 16px;
+    box-shadow: 0 0 10px 0 #ff3300, 0 0 10px 0 #ff3300;
+    border: 2px solid #cc2900;
+    background-color: rgba(255, 255, 0, 0.9);
+    margin: 10px 0 8px 0;
+}
+
+/*Tarjeta de información*/
+
+#info {
+    opacity: 0;
+    transition: opacity 300ms;
+    margin-bottom: 50px;
+}
+
+#info ul {
+    list-style: none;
+    padding: 0;
+}
+
+#info ul li {
+    padding: 4px 0;
+}
+
+hr {
+    margin: 0;
+}
+
+.card {
+    background-image: url(../img/BG-card.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px rgb(0,0,0);
+}
+
+.portrait {
+    align-self: center;
+}
+
+.portrait img {
+    box-shadow: 0 0 8px rgb(220,220,220);
+}
+
+.card-body {
+    color: #fff;
+    padding: 30px;
+}
+
+/*Gráfico*/
+#grafico {
+    align-self: center;
+}
+
+#chartContainer {
+    box-shadow: 0 0 15px 5px rgb(0,0,0);
+}
+
+/*Footer*/
+
+footer p {
+    position: fixed;
+    left:50%;
+    bottom: 10px;
+    transform: translate(-50%,0);
+    color: #fff;
+    background-color: #000;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bolder;
+    opacity: 0.8;
+}
+
+/*Control de animaciones*/
+@keyframes lightBreath {
+    0% {box-shadow: none}
+    10% {box-shadow: none}
+    95% {box-shadow: 0 0 10px 3px #ffffcc, 0 0 10px 0px #ffffcc;}
+    100% {box-shadow: 0 0 10px 3px #ffffcc, 0 0 10px 0px #ffffcc;}
+}
+
+@keyframes lightBreathFocus {
+    0% {box-shadow: none}
+    10% {box-shadow: none}
+    95% {box-shadow: 0 0 10px 3px #ffffcc, 0 0 10px 0px #ffffcc;}
+    100% {box-shadow: 0 0 10px 3px #ffffcc, 0 0 10px 0px #ffffcc;}
+}
