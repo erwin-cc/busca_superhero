@@ -1,5 +1,8 @@
-# busca_superhero
-Ejercicio sobre el uso de APIs para Talento Digital Chile
+# Busca tu Superhero
+Ejercicio sobre el uso de APIs.
 
-Además, se ha practicado la aplicacion de fondos con imágenes, animaciones con @keyframes
-y el diseño de un tooltip personalizado.
+Además, se ha practicado:
+- Aplicacion de fondos con imágenes.
+- Posicionamiento de elementos.
+- Animaciones con @keyframes.
+- Diseño de un tooltip personalizado.
